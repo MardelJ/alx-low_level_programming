@@ -2,6 +2,7 @@
 /**
  * main - Print the phrase with proper grammar
  * using printf
+ * Return: Always 0 when exit properly i guess
  */
 
 int main(void)
