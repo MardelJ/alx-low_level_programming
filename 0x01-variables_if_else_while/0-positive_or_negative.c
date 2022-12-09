@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
  * main - mus check if this is positive or negative
  * Return: 0 when succeded
