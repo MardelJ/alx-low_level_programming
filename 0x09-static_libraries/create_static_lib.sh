@@ -1,9 +1,7 @@
 #!/bin/bash
+for file in *.c;
+do
+    gcc -c $file;
+done
 
-# a script that creates a static library
-# called liball.a from all the .c files
-# that are in the current directory
-
-gcc -c *.c
-ar rc liball.a *.o
-echo y | rm -I *.o
+ar src liball.a *.o

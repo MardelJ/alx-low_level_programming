@@ -1,5 +1,6 @@
-#include <stdlib.h>
+#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
@@ -8,7 +9,7 @@
  * @num: string to check
  * Return: 0 if it's a number
  *         1 if it's not a number
-*/
+ */
 
 int isNum(char num[])
 {
@@ -19,43 +20,36 @@ int isNum(char num[])
 		if (!isdigit(num[i]))
 			return (1);
 	}
+
 	return (0);
 }
 
-
 /**
- * main - a program that adds positive numbers
+ * main - program that adds positive numbers
  *
- * @argc: holds the number of arguments passed
- * @argv: array pointer that holds the arguments passed
+ * @argc: the number of arguments
+ * @argv: the argument's array
  *
- * Return: Always 0 (Success)
-*/
+ * Return: 0 (success) or 1 (failed)
+ */
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, sum = 0;
 
-	if (argc == 1)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0\n");
-	}
-	else
-	{
-		sum = 0;
-		for (i = 1; i < argc; i++)
+		if (isNum(argv[i]) == 0)
 		{
-			if (isNum(argv[i]) == 0)
-			{
-				sum += atoi(argv[i]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(argv[i]);
+		} else
+		{
+			printf("Error\n");
+			return (1);
 		}
-		printf("%d\n", sum);
 	}
+
+	printf("%d\n", sum);
+
 	return (0);
 }
